@@ -1,4 +1,6 @@
 struct S { int m[9]; };
-int f(S * s) {
-    return s->m[sizeof(s->m)]; // Array 's->m[9]' accessed at index 36, which is out of bounds.
-}
+    if (sizeof(s->m) < 36) {
+        return -1; // Return an error value or handle the out-of-bounds access appropriately
+    }
+    return s->m[36]; // Access the array element at index 36
+    return s->m[36]; // Access the array element at index 36
